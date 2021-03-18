@@ -40,81 +40,104 @@ public class ShoppingListGUI extends JFrame implements ActionListener {
 
 	private ShoppingList list = new ShoppingList();
 	
-	/**
-	 * Constructor for the user interface. Creates a 400x400 GUI with a visual
+		/**
+	 * Constructor for the user interface. Creates a 420x420 GUI with a visual
 	 * Shopping List and some basic tools for manipulating the list.
 	 */
 	public ShoppingListGUI() {
 		super();
-		this.setTitle("Shopping List");
-		this.setSize(400, 400);
+		this.setTitle("Shopping List(Dark Mode)");
+		this.setSize(420, 420);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
 		
 		this.contentPane = this.getContentPane();
-		this.contentPane.setBackground(Color.LIGHT_GRAY);
+		this.contentPane.setBackground(Color.DARK_GRAY);
 		this.contentPane.setLayout(new FlowLayout());
 		
 		this.outputBox = new JEditorPane("Items", this.list.toString());
 		this.outputBox.setEditable(false);
 		this.outputBox.setPreferredSize(new Dimension(300, 200));;
-		this.outputBox.setBackground(Color.WHITE);
-		this.outputBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		this.outputBox.setBackground(Color.DARK_GRAY);
+		this.outputBox.setForeground(Color.WHITE);
+		this.outputBox.setBorder(BorderFactory.createEtchedBorder(Color.ORANGE, Color.RED));
 		this.add(this.outputBox);
 		
 		this.additionPane = new JPanel();
-		this.additionPane.setBackground(Color.WHITE);
-		this.additionPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		this.additionPane.setBackground(Color.DARK_GRAY);
+		this.additionPane.setForeground(Color.WHITE);
+		this.additionPane.setBorder(BorderFactory.createEtchedBorder(Color.ORANGE, Color.RED));
 		this.add(this.additionPane);
 		
 		this.removalPane = new JPanel();
-		this.removalPane.setBackground(Color.WHITE);
+		this.removalPane.setBackground(Color.DARK_GRAY);
+		this.removalPane.setForeground(Color.WHITE);
 		this.removalPane.setPreferredSize(new Dimension(340,115));
-		this.removalPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		this.removalPane.setBorder(BorderFactory.createEtchedBorder(Color.ORANGE, Color.RED));
 		this.add(this.removalPane);
 		
 		this.inputLabel = new JLabel("ITEM:");
+		this.inputLabel.setForeground(Color.WHITE);
 		this.additionPane.add(this.inputLabel);
 		
 		this.inputBox = new JTextField(12);
-		this.inputBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		this.inputBox.setBackground(Color.DARK_GRAY);
+		this.inputBox.setForeground(Color.WHITE);
+		this.inputBox.setBorder(BorderFactory.createEtchedBorder(Color.ORANGE, Color.RED));
+		this.inputBox.setCaretColor(Color.WHITE);
 		this.inputBox.setToolTipText("Name of item to add to the list.");
 		this.additionPane.add(this.inputBox);
 		
 		this.positionLabel = new JLabel("POSITION: #");
+		this.positionLabel.setForeground(Color.WHITE);
 		this.additionPane.add(this.positionLabel);
 		
 		this.positionBox = new JTextField(10);
 		this.positionBox.setText("");
-		this.positionBox.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		this.positionBox.setBackground(Color.DARK_GRAY);
+		this.positionBox.setForeground(Color.WHITE);
+		this.positionBox.setBorder(BorderFactory.createEtchedBorder(Color.ORANGE, Color.RED));
+		this.positionBox.setCaretColor(Color.WHITE);
 		this.positionBox.setToolTipText("Enter an integer");
 		this.additionPane.add(this.positionBox);
 		
-
 		this.addButton = new JButton("Add Item");
+		this.addButton.setBackground(Color.DARK_GRAY);
+		this.addButton.setForeground(Color.WHITE);
 		this.addButton.addActionListener(this);
 		this.removalPane.add(this.addButton);
 		
 		this.addSpecButton = new JButton("Add Item at Position");
+		this.addSpecButton.setBackground(Color.DARK_GRAY);
+		this.addSpecButton.setForeground(Color.WHITE);
 		this.addSpecButton.addActionListener(this);
 		this.removalPane.add(this.addSpecButton);
 		
 		this.removeDataButton = new JButton("Remove Item");
+		this.removeDataButton.setBackground(Color.DARK_GRAY);
+		this.removeDataButton.setForeground(Color.WHITE);
 		this.removeDataButton.addActionListener(this);
 		this.removalPane.add(this.removeDataButton);
 		
 		this.removeButton = new JButton("Remove Item at Position");
+		this.removeButton.setBackground(Color.DARK_GRAY);
+		this.removeButton.setForeground(Color.WHITE);
 		this.removeButton.addActionListener(this);
 		this.removalPane.add(this.removeButton);
 	
 		this.clearButton = new JButton("Clear Fields");
+		this.clearButton.setBackground(Color.DARK_GRAY);
+		this.clearButton.setForeground(Color.WHITE);
 		this.clearButton.addActionListener(this);
 		this.removalPane.add(this.clearButton);
 		
 		this.clearAllButton = new JButton("Clear Shopping List");
+		this.clearAllButton.setBackground(Color.DARK_GRAY);
+		this.clearAllButton.setForeground(Color.WHITE);
 		this.clearAllButton.addActionListener(this);
 		this.removalPane.add(this.clearAllButton);
 	
+		
 		
 	}// Ending bracket of constructor
 	
